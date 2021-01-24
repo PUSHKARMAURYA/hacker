@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+    body, html {
+    font-size:25px;
+    margin: 0;
+    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: normal;
+    background-color: #111;
+    color: #393;
+    font-family: monospace;
+    
+}
+#type {
+   width: 100vw; 
+   height: 1px;
+   border: none;
+   margin: 0;
+   padding: 0;
+   display: inline-block;
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 2;
+   overflow: auto;
+   color: transparent;
+   outline: none;
+   background-color: transparent;
+  
+}
+input[type="text"]
+{
+    font-size:242px;
+}
+    </style>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+		<title>hacker type experience</title>
+    </head>
+    <body >
+    
+    Just Start Typing! [Tap to  Keyboard on Mobile Devices]
+        <input type="text" id="type" onkeyup="openFullscreen();playAudio();" />
+        <audio id="myAudio">
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="https://res.cloudinary.com/dqkwzygyv/video/upload/v1605856306/y2mate_mp3cut.net_xcwclv.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+</script>
+        <script>
+        
+        var elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+}
+        $(function(){
+    $("#screen").css({
+        "width" : document.documentElement.clientWidth,
+        "minHeight" : document.documentElement.clientHeight
+    });
+    $(document).click(function(){
+        $("#type").trigger("focus");
+    });
+    $(document).keyup(function(){
+        $("#type").trigger("focus");
+    });
+    var terms = [
+        "$(function(){\n\t$.database.get('Password')\n});",
+        "exec({\n\t'Password' : 'KbJ7zpQ',\n\t'Username' : 'Administrator'\n});",
+        ">>> Command Returned 2",
+        ">>> Return 0;",
+        "## Server Connected",
+        "## Server Disconnected",
+        "## Connection Refused",
+        "ACCESS DENIED",
+        "ACCESS GRANTED",
+        "Password: ********\n>>> Incorrect Password\n## Server Disconnected",
+        "\n\nNMAP\n\n\tIP: 198.162.0.24\n\tPlatform: Linux armv7\n\tUsers Connected: 27\n\tNetmask: 255.255.255.0\n\t0 flags up\n\n\t",
+        "Reconnecting...",
+        ">>> 'Leave a like!\n\tBy:Pushkar Maurya'",
+        "/bin ~ # sudo chown /system/",
+        "$.system.on();\n\t[SYSTEM]:Antivirus Protocol Overridden\n\t[SERVER]:Firewall Disabled\n\t",
+        "[ROOT]:Filesystem Formatted",
+        "oauth: ks7bJpp8bvxz35hq"
+    ];
+    
+    $("#type").keyup(function(e){
+        var random = (Math.floor(Math.random() * terms.length));
+        breakSpace = new RegExp("\n", "g");
+        tabSpace = new RegExp("\t", "g");
+        try{
+           terms[random] = terms[random].replace(breakSpace, "<br />");
+           terms[random] = terms[random].replace(tabSpace, "&nbsp;&nbsp;&nbsp;&nbsp;");
+        }
+        catch(err){}
+        $("body").prepend(terms[random] + "<br />");
+        
+    });
+    $("#type").trigger("focus")
+});
+   (function (global) {
+
+	if(typeof (global) === "undefined")
+	{
+		throw new Error("window is undefined");
+	}
+
+    var _hash = "!";
+    var noBackPlease = function () {
+        global.location.href += "#";
+
+		// making sure we have the fruit available for juice....
+		// 50 milliseconds for just once do not cost much (^__^)
+        global.setTimeout(function () {
+            global.location.href += "!";
+        }, 50);
+    };
+	
+	// Earlier we had setInerval here....
+    global.onhashchange = function () {
+        if (global.location.hash !== _hash) {
+            global.location.hash = _hash;
+        }
+    };
+
+    global.onload = function () {
+        
+		noBackPlease();
+
+		// disables backspace on page except on input fields and textarea..
+		document.body.onkeydown = function (e) {
+            var elm = e.target.nodeName.toLowerCase();
+            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                e.preventDefault();
+            }
+            // stopping event bubbling up the DOM tree..
+            e.stopPropagation();
+        };
+		
+    };
+
+})(window);
+		
+		</script>
+    </body>
+</html>
