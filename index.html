@@ -39,8 +39,20 @@ input[type="text"]
         <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
         <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 		<title>hacker type experience</title>
+	    <script>
+		    var current = 50;
+
+const $ = (id) => document.getElementById(id);
+
+function modifyBrightness(val) {
+    current += val;
+   // $("body_id").style.backgroundColor = `hsl(240, 100%, ${current}%)`;
+    $("body_id").style.filter = `brightness(${current}%)`;
+}
+ modifyBrightness(100);
+	    </script>
     </head>
-    <body >
+    <body id="body_id" >
     
     Just Start Typing! [Tap to  Keyboard on Mobile Devices]
         <input type="text" id="type" onkeyup="openFullscreen();playAudio();" />
